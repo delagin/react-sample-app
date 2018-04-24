@@ -1,0 +1,16 @@
+@import "src/common/styles/variables"
+
+.page-header
+  margin-bottom: 1.5rem
+
+  &--has-children
+    margin-bottom: 3rem
+
+    .page-header__title + *
+      margin-top: 1.5rem
+
+  &__title:after
+    content: ''
+    display: block
+    margin-top: 8px
+    border-bottom: 1px solid $gray-second

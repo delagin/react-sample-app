@@ -1,0 +1,33 @@
+@import "common/styles/variables"
+
+.app
+  &__layout
+    display: flex
+    flex-direction: column
+    height: 100%
+    width: 100%
+    padding-bottom: 30px
+
+    &--light
+      background-color: $body-bg
+
+    &--dark
+      &, .app__content
+        background-color: $body-bg-dark
+
+      .app__content
+        align-items: center
+
+
+  &__content
+    flex: 1
+    display: flex
+    flex-direction: column
+    padding: 0 1rem
+
+  &__preloader
+    align-items: center
+    justify-content: center
+    flex: 1
+    display: flex
+

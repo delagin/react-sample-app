@@ -1,0 +1,38 @@
+@import "src/common/styles/variables"
+
+.small-layout-container
+  width: 100%
+  max-width: 28rem
+  padding: 24px 24px
+  background-color: $white
+
+  &__header-icon
+    margin: 2rem auto
+    text-align: center
+    width: 64px
+    height: 41px
+    background-position: center center
+
+  &__header-icon-mail
+    background-image: url('assets/images/mail.png')
+
+  &__header-title
+    font-size: 1.28rem
+    line-height: 1.7rem
+    font-weight: 600
+    text-align: center
+    margin: 2rem auto
+
+  &__info-toggle-header
+    margin-bottom: 2rem
+
+    &.row
+      align-items: baseline
+
+  &__info-toggle-icon
+    opacity: 0.5
+    transition: opacity 0.2s ease-in-out
+
+    &:hover
+      opacity: 0.85
+      cursor: pointer

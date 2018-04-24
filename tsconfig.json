@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    "outDir": "./www/",
+    "baseUrl": "./",
+    "sourceMap": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es5",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "downlevelIteration": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "alwaysStrict": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmitOnError": true,
+    "pretty": true,
+    "checkJs": false, // typecheck js files
+    "declaration": false, // don't emit declarations
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true, // importing helper functions from tslib
+    "noEmitHelpers": true, // disable emitting inline helper functions
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "paths": {
+      "@common/*": ["./src/common/*"],
+      "@app/*": ["./src/apps/app/*"],
+      "@pub/*": ["./src/apps/pub/*"],
+      "@login/*": ["./src/apps/login/*"],
+      "@registration/*": ["./src/apps/registration/*"],
+      "@complete-registration/*": ["./src/apps/complete-registration/*"],
+      "@password-reset/*": ["./src/apps/password-reset/*"],
+      "@email-confirmation/*": ["./src/apps/email-confirmation/*"],
+      "@forgot-password/*": ["./src/apps/forgot-password/*"],
+      "@reset-password/*": ["./src/apps/reset-password/*"]
+    },
+    "jsx": "react"
+  },
+  "include": [
+    "./src/.d.ts",
+    "./src/**/*"
+  ],
+  "exclude": [
+    "www",
+    "src/**/*.spec.*",
+    "node_modules"
+  ],
+  "compileOnSave": false
+}

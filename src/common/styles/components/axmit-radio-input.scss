@@ -1,0 +1,45 @@
+@import "common/styles/variables";
+@import "common/styles/bootstrap/bootstrap";
+@import "axmit-inputs";
+
+
+/**
+ * Radio inputs
+ */
+
+.axmit-radio-input {
+  @extend %axmit-input;
+
+  input + .axmit-input__element {
+    border-radius: 50%;
+
+    &::after {
+      content: '\f10c';
+    }
+  }
+
+  input:checked + .axmit-input__element::after {
+    content: '\f192';
+    color: $primary;
+  }
+}
+
+
+/**
+ * Validation statuses
+ */
+
+.was-validated .axmit-radio-input,
+.was-validated.axmit-radio-input {
+  input[value='']:checked + .axmit-input__element {
+    &::after { color: $danger; }
+    & + * { color: $danger; }
+  }
+}
+
+.not-validated .axmit-radio-input,
+.not-validated.axmit-radio-input {
+  input[required] + .axmit-input__element {
+    &::after { color: $warning; }
+  }
+}

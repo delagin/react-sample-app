@@ -1,0 +1,59 @@
+%axmit-input {
+  position: relative;
+  cursor: pointer;
+
+  padding: 0.25rem 0;
+  & + & { padding-top: 0; }
+
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+  &::selection {
+    background: transparent;
+  }
+
+  input + .axmit-input__element {
+    content: "";
+    display: inline-block;
+    margin: 0 .5em 0 0;
+    padding: 0;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+
+
+    &::after {
+      content: "";
+      display: block;
+      width: 11px;
+      height: 11px;
+      font-size: 14px;
+      line-height: 12px;
+      font-family: FontAwesome;
+      color: $gray-600;
+    }
+  }
+
+  input:focus + .axmit-input__element {
+    box-shadow: 0 0 0 3px lighten($primary, 40%);
+  }
+
+  input {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+  }
+}
+
+.axmit-inline-inputs {
+  display: flex;
+  align-items: baseline;
+
+  > * {
+    margin-left: 1rem;
+    &:first-of-type { margin-left: 0; }
+  }
+}

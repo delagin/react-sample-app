@@ -1,0 +1,61 @@
+.form-control {
+  -webkit-appearance: none;
+
+  label {
+    margin-bottom: .2rem;
+  }
+
+  &:not([size]):not([multiple]) {
+    height: $input-height;
+  }
+}
+
+
+/**
+ * Set default style for invalid elements in Mozilla Firefox
+ */
+input {
+  &:not(output):-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  &:not(output):-moz-ui-invalid:-moz-focusring {
+    box-shadow: none;
+  }
+}
+
+
+/**
+ * Select input style
+ */
+input[type='select'].form-control,
+select.form-control {
+  background-image: url('assets/images/sort_both_triangle.png');
+  padding-right: 23px;
+  background-position: right;
+  background-repeat: no-repeat;
+
+  -moz-appearance: none;
+
+  &.not-selected {
+    color: $gray-600;
+    > * { color: $gray-900; }
+    > option:first-child { color: $gray-600; }
+  }
+}
+
+
+/**
+ * Validity wrapping classes
+ */
+
+// .was-validated {
+// }
+
+.not-validated {
+  input[type=text][required].form-control:invalid,
+  input[type=select][required].form-control:invalid,
+  select[required].form-control:invalid {
+    border-color: $warning;
+  }
+}

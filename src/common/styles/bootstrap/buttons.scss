@@ -1,0 +1,12 @@
+.btn-warning {
+  &, &:hover, &:active{
+    color: white !important;
+  }
+}
+.btn.btn-outline-primary {
+  color: #333;
+}
+
+.btn[disabled] {
+  cursor: not-allowed;
+}

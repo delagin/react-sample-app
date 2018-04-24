@@ -1,0 +1,66 @@
+@import "src/common/styles/variables"
+
+.axmit-table
+  background-color: $white
+  width: 100%
+  &--layout
+    &-auto
+      table-layout: auto
+
+    &-fixed
+      table-layout: fixed
+
+  &__sorting-triangle
+    color: lighten($gray-light, 20%)
+
+    &--active
+      color: $gray-light
+
+  &__th
+    white-space: nowrap
+
+    @at-root .table-sm &
+      padding-top: 0.75rem
+      padding-bottom: 0.75rem
+      height: 24px
+      font-weight: 600
+      line-height: 24px
+      font-size: 14px
+
+      &:first-child
+        padding-left: 0.75rem
+
+      &:last-child
+        padding-right: 0.75rem
+
+    &--sortable
+      cursor: pointer
+
+  &__td
+    word-wrap: break-word
+
+    @at-root .table-sm &
+      padding-top: 0.5rem
+      padding-bottom: 0.5rem
+
+      &:first-child
+        padding-left: 0.75rem
+
+      &:last-child
+        padding-right: 0.75rem
+
+  &__tr
+    &--clickable
+      cursor: pointer
+
+  &__header
+    margin-bottom: 0.5rem
+
+  &__pagination
+    > *:not(:first-child)
+      margin-left: 1rem
+      font-weight: 600
+
+    > .btn
+      padding-left: 2rem
+      padding-right: 2rem

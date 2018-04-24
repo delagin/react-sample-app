@@ -1,0 +1,53 @@
+@import "common/styles/variables";
+@import "common/styles/bootstrap/bootstrap";
+@import "axmit-inputs";
+
+
+/**
+ * Checkbox inputs
+ */
+
+.axmit-checkbox-input {
+  @extend %axmit-input;
+
+  input + .axmit-input__element {
+    border-radius: 2px;
+
+    &::after {
+      content: '\f096';
+    }
+  }
+
+  input:checked + .axmit-input__element::after {
+    content: '\f046';
+    color: $primary;
+  }
+}
+
+
+/**
+ * Validation statuses
+ */
+
+.was-validated .axmit-checkbox-input,
+.was-validated.axmit-checkbox-input {
+  input[required]:not(:checked) + .axmit-input__element {
+    &::after { color: $danger; }
+    & + * { color: $danger; }
+  }
+
+  input[required]:not(:checked):focus + .axmit-input__element {
+    box-shadow: 0 0 0 3px lighten($danger, 30%);
+  }
+}
+
+.not-validated .axmit-checkbox-input,
+.not-validated.axmit-checkbox-input {
+  input[required] + .axmit-input__element {
+    &::after { color: $warning; }
+  }
+
+  input[required]:focus + .axmit-input__element {
+    box-shadow: 0 0 0 3px lighten($warning, 30%);
+  }
+}

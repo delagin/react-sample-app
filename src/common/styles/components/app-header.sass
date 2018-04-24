@@ -1,0 +1,163 @@
+@import "common/styles/variables"
+
+.app-header
+  $light-header-min-width: 1024px
+  $light-header-secondary-height: 60px
+  $light-header-primary-height: 40px
+  $header-left-padding: 80px
+  $menu-item-horizontal-padding: 16px;
+  $light-header-height: $light-header-secondary-height + $light-header-primary-height
+  $light-header-color: $gray-light
+  $menu-bg-color: $body-bg-dark
+  $anim-duration: 0.2s
+
+  z-index: 1099
+  display: flex
+  flex-direction: row
+  color: $light-header-color
+  padding: 0 1rem
+
+
+  .app__layout--light &__container
+    margin-bottom: 50px
+    width: 100%
+    min-width: $light-header-min-width
+    z-index: 1099
+    position: -webkit-sticky
+    position: sticky
+    top: 0
+
+
+  &__inner
+    height: $light-header-height
+    width: 100%
+
+    &:after
+      display: block
+      width: 100%
+      height: 1px
+      box-shadow: 0px 0px 6px $menu-bg-color
+
+    &_primary
+      background-color: $body-bg-dark
+      height: $light-header-primary-height
+      padding-left: $header-left-padding - $menu-item-horizontal-padding
+      display: flex
+
+      .app-header__menu_item
+        min-height: $light-header-primary-height
+        height: $light-header-primary-height
+
+
+    &_secondary
+      height: $light-header-secondary-height
+      color: $menu-bg-color
+      padding-left: $header-left-padding// size of logo
+      background-color: $body-bg
+      justify-content: flex-end
+      display: flex
+
+      .app-header__menu
+        flex: 0
+
+      .app-header__menu_item
+        min-height: $light-header-secondary-height
+        height: $light-header-secondary-height
+
+
+  &__logo-container
+    flex: 1
+    margin-top: 5px
+    //margin-left: 1rem
+
+  &__logo
+    &--svg
+      width: 100px
+      margin-top: 50px
+
+
+  &--dark
+    justify-content: center
+    height: 100px
+    margin-bottom: 30px
+
+
+  &--light
+    height: $light-header-height
+    background-color: $menu-bg-color
+    width: 100%
+    min-width: $light-header-min-width
+    position: fixed
+
+
+  &__menu_toggle,
+  &__menu
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: flex-start
+    padding-left:
+
+    li
+      list-style: none
+      display: flex
+      align-items: center
+      text-transform: uppercase
+      padding: 0 $menu-item-horizontal-padding
+
+
+  &__menu_item_link
+    color: $light-header-color
+    width: 100%
+    display: inline-block
+    white-space: nowrap
+
+    &:hover
+      text-decoration: none
+      color: $info
+      transition: color $anim-duration ease-in-out
+      cursor: pointer
+
+
+  &__menu
+    flex: 1
+    padding: 0
+
+
+  &__menu_toggle.app-header__dropdown.app-header__menu_item
+    justify-content: flex-end
+    align-items: center
+
+    ul.app-header__dropdown_list
+      margin-left: 0
+      right: 0
+
+
+  &__menu_item.app-header__dropdown
+    display: flex
+    background-color: $menu-bg-color
+
+    .app-header__dropdown_list
+      padding: 0
+      position: absolute
+      background: $menu-bg-color
+      top: $light-header-height
+      padding: 0.2rem 1.2rem
+      margin-left: -1.2rem
+      visibility: hidden
+      max-height: 0
+      opacity: 0
+
+
+  &__menu_item
+    &--active.app-header__dropdown > .app-header__dropdown_list
+      visibility: visible
+      max-height: 100vh
+      opacity: 1
+      transition: opacity $anim-duration ease-in-out
+      z-index: 999
+      min-width: 13rem
+
+      li
+        padding: 0
+

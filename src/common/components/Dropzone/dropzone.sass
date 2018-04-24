@@ -1,0 +1,26 @@
+@import "src/common/styles/variables"
+
+.react-dropzone
+  $light-blue: #2BB5FA
+
+  &__container
+    width: 100%
+    min-height: 150px
+    border: 2px dashed $gray-second
+    border-radius: 0.3rem
+    background: rgba($gray-second, 0.15)
+    transition: background 0.2s ease-in-out, border 0.2s ease-in-out
+
+    &:hover
+      cursor: pointer
+
+    &--accepted,
+    &--rejected,
+    &--selected
+      background-color: rgba($light-blue, 0.1)
+      border-color: $light-blue
+
+  &__icon-add
+    position: absolute
+    margin-top: 8px
+    margin-left: 7px

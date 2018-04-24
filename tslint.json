@@ -1,0 +1,54 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint:recommended",
+    "tslint:latest",
+    "tslint-react",
+    "tslint-microsoft-contrib",
+    "tslint-config-airbnb"
+  ],
+  "jsRules": {
+    "no-console": false,
+    "quotemark": [true,"single"],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": {
+          "objects": "always",
+          "arrays": "always",
+          "functions": "never",
+          "typeLiterals": "ignore"
+        }
+      }
+    ]
+  },
+  "rules": {
+    "no-submodule-imports": false,
+    "no-console": [true, "log", "debug", "warn"],
+    "no-implicit-dependencies": false,
+    "no-require-imports": false,
+    "no-var-requires": false,
+    "variable-name": [true, "allow-pascal-case"],
+    "quotemark": [true, "single"],
+    "no-unused-variable": [ true, "React"],
+    "max-func-body-length": [ true, 300],
+    "no-import-side-effect": [true, {"ignore-module": "(\\.s(a|c)ss)$"}],
+    "max-line-length": [true, 120],
+
+    // Microsofr Contrub rules
+    "missing-jsdoc": false,
+    "import-name": false,
+    "no-any": false,
+    "typedef": false,
+    "completed-docs": false,
+    "no-multiline-string": false,
+
+    // override tslint-react rules here
+    "jsx-no-multiline-js": false,
+    "jsx-wrap-multiline": false,
+    "react-tsx-curly-spacing": false,
+    "no-backbone-get-set-outside-model": false
+  },
+  "rulesDirectory": []
+}
+

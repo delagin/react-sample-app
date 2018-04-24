@@ -1,0 +1,12 @@
+@import "mixins";
+
+@include font-face(ApercuPro-Regular, "../fonts/ApercuPro-Regular");
+@include font-face(ApercuPro-Bold, "../fonts/ApercuPro-Bold");
+@include font-face(ApercuPro-Light, "../fonts/ApercuPro-Light");
+@include font-face(ApercuPro-RegularItalic, "../fonts/ApercuPro-RegularItalic");
+@include font-face(ApercuPro-Light, "../fonts/ApercuPro-Light");
+@include font-face(ApercuPro-Medium, "../fonts/ApercuPro-Medium");
+
+body {
+  font-family: "ApercuPro-Regular";
+}
